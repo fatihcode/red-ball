@@ -1,55 +1,102 @@
 body {
-  background-color: #ffffff;
-  margin: 0px;
+  background-image: url(img/background.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
 }
 
-.header,
-h1 {
-  background-color: #00ffff;
+main {
   text-align: center;
-  margin-top: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 960px;
+  margin: auto;
 }
 
-.title-row {
+header {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin: 50px;
+}
+
+h1 {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: white;
+  color: #bb2d3b;
+}
+
+p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin-top: 21px;
   margin-bottom: 12px;
+  font-size: 20px;
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-
-.cup-row {
-  text-align: center;
-  direction: rtl;
-}
-
-.cup-frame {
-  cursor: pointer;
-  padding: 10px;
-}
-
-.start-row {
-  margin: auto;
-  width: 140px;
-  height: 45px;
-  font-family: 'Work Sans';
-  background-color: #eb6536;
-  padding: 10px;
-  font-size: 17px;
   font-weight: bold;
+}
+
+
+section {
   text-align: center;
-  color: #fff;
-  margin-bottom: 21px;
+}
+
+span {
+  display: inline-block;
   cursor: pointer;
+  padding: 10px;
+  height: 350px;
+  width: 230px;
+}
+
+.red {
+  background-image: url(img/red.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  transition: 0.3s ease;
+}
+
+.green {
+  background-image: url(img/green.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.3s ease;
+}
+
+.close {
+  background-image: url(img/close.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.3s ease;
+}
+
+
+button {
+  color: #fff;
+  font-family: 'Work Sans';
+  border: none;
+  margin: 50px auto;
+  width: 180px;
+  height: 70px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 21px;
   border-radius: 10px;
-  line-height: 1.2em;
+  line-height: 1.5em;
+  transition: 0.3s ease;
+  box-shadow: 0 0.5rem 0.5rem rgba(36, 24, 24, 0.2);
+  cursor: pointer;
 }
 
-.start-row-lose{
+
+.lose {
   background-color: #bb2d3b;
+  transition: 0.3s ease;
 }
 
-.start-row-win{
+.win {
   background-color: #198754;
+  transition: 0.3s ease;
+}
+
+.disable {
+  box-shadow: none;
+  visibility: hidden
 }

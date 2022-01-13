@@ -2,16 +2,14 @@ const cupImage1 = document.getElementById("cup_a")
 const cupImage2 = document.getElementById("cup_b")
 const cupImage3 = document.getElementById("cup_c")
 
-const redBall = "img/red.png"
-const emptyCup = "img/green.png"
-const closedCup = 'img/close.png'
+const redBall = "red"
+const greenBall = "green"
+const closedCup = "close"
 
 const startButton = document.getElementById("start")
 
 let numClosedCups = 3;
-
-let openCup1, openCup2, openCup3;
-
+let cup1, cup2, cup3;
 playing = true
 
 
@@ -19,22 +17,22 @@ playing = true
 
 
 cupImage1.onclick = () => {
-    if (playing && cupImage1.src.includes(closedCup)) {
-        cupImage1.src = openCup1
+    if (playing && cupImage1.className.includes(closedCup)) {
+        cupImage1.classList.replace(closedCup,cup1)
         playCup(cupImage1)
     }
 }
 
 cupImage2.onclick = () => {
-    if (playing && cupImage2.src.includes(closedCup)) {
-        cupImage2.src = openCup2
+    if (playing && cupImage2.className.includes(closedCup)) {
+        cupImage2.classList.replace(closedCup,cup2)
         playCup(cupImage2)
     }
 }
 
 cupImage3.onclick = () => {
-    if (playing && cupImage3.src.includes(closedCup)) {
-        cupImage3.src = openCup3
+    if (playing && cupImage3.className.includes(closedCup)) {
+        cupImage3.classList.replace(closedCup,cup3)
         playCup(cupImage3)
     }
 }
@@ -46,30 +44,27 @@ cupImage3.onclick = () => {
 
 function randomFindCupGenerator() {
 
-    let findCup = Math.floor(Math.random() * 3)
-    console.log(findCup)
-
-    switch (findCup) {
+      switch (Math.floor(Math.random() * 3)) {
         case 0:
-            openCup1 = redBall
-            openCup2 = emptyCup
-            openCup3 = emptyCup
+            cup1 = redBall
+            cup2 = greenBall
+            cup3 = greenBall
             break;
         case 1:
-            openCup1 = emptyCup
-            openCup2 = emptyCup
-            openCup3 = redBall
+            cup1 = greenBall
+            cup2 = greenBall
+            cup3 = redBall
             break;
         case 2:
-            openCup1 = emptyCup
-            openCup2 = redBall
-            openCup3 = emptyCup
+            cup1 = greenBall
+            cup2 = redBall
+            cup3 = greenBall
             break;
     }
 }
 
 randomFindCupGenerator()
-
+console.log(randomFindCupGenerator())
 
 //-----------------------------------------------------------
 
@@ -79,14 +74,14 @@ function playCup(cup) {
     numClosedCups--
 
     if (numClosedCups == 0) {
-        startButton.innerHTML = 'You win!<br>Play again?';
-        startButton.classList.add("start-row-win")
+        startButton.innerHTML = 'Kazandın!<br>Tekrar Oyna';
+        startButton.classList.replace("disable","win")
         playing = false
         
 
-    } else if (cup.src.includes(redBall)) {
-        startButton.innerHTML = 'Game Over!<br>Play again?';
-        startButton.classList.add("start-row-lose")
+    } else if (cup.className.includes(redBall)) {
+        startButton.innerHTML = 'Kaybettin!<br>Tekrar Oyna';
+        startButton.classList.replace("disable","lose")
         playing = false
     }
 }
@@ -96,16 +91,48 @@ function playCup(cup) {
 
 
 startButton.onclick = () => {
-    startButton.innerHTML = 'Good<br>Luck!'
-    cupImage1.src = closedCup
-    cupImage2.src = closedCup
-    cupImage3.src = closedCup
+    startButton.innerHTML = ''
+    cupImage1.className = closedCup
+    cupImage2.className = closedCup
+    cupImage3.className = closedCup
     numClosedCups = 3
     playing = true
-    startButton.classList.remove("start-row-win")
-    startButton.classList.remove("start-row-lose")
+    startButton.className = "disable"
+    startButton.classList.remove("win")
+    startButton.classList.remove("lose")
     randomFindCupGenerator()
 }
 
 
 //-----------------------------------------------------------
+
+
+
+function preloader() {
+    if (document.images) {
+        var img1 = new Image();
+        var img2 = new Image();
+        var img3 = new Image();
+
+        img1.src = "img/close.png";
+        img2.src = "img/green.png";
+        img3.src = "img/red.png";
+    }
+}
+
+
+function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function') {
+        window.onload = func;
+    } else {
+        window.onload = function () {
+            if (oldonload) {
+                oldonload();
+            }
+            func();
+        }
+    }
+}
+
+addLoadEvent(preloader);

@@ -2,25 +2,28 @@
 <html>
 
 <head>
-  <link href="./style.css" rel="stylesheet" type="text/css">
+  <link href="style.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet" type="text/css">
-  <title>Choose Cup</title>
+  <title>Red Ball</title>
 </head>
 
 <body>
-  <div class="header">
-    <h1>CHOOSE CUP</h1>
-  </div>
-  <div class="title-row">
- Kırmızıyı en son bardakta bulursan kazanırsın.
-  </div>
+  <main>
 
-  <div class="cup-row">
-    <img id="cup_a" class="cup-frame" src="img/close.png" alt="first">
-    <img id="cup_b" class="cup-frame" src="img/close.png" alt="second">
-    <img id="cup_c" class="cup-frame" src="img/close.png" alt="third">
-  </div>
-  <div id="start" class="start-row">Good<br>Luck!</div>
+    <header>
+      <h1>RED BALL</h1>
+      <p>Kırmızı topu en son açarsan kazanırsın.</p>
+    </header>
+
+    <section>
+      <span id="cup_a" class="close"></span>
+      <span id="cup_b" class="close"></span>
+      <span id="cup_c" class="close"></span>
+    </section>
+
+    <button id="start" class="disable"></button>
+
+  </main>
   <script type="text/javascript" src="script.js"></script>
 </body>
 
