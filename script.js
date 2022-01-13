@@ -41,7 +41,6 @@ cupImage3.onclick = () => {
 //-----------------------------------------------------------
 
 
-
 function randomFindCupGenerator() {
 
       switch (Math.floor(Math.random() * 3)) {
@@ -64,7 +63,7 @@ function randomFindCupGenerator() {
 }
 
 randomFindCupGenerator()
-console.log(randomFindCupGenerator())
+
 
 //-----------------------------------------------------------
 
