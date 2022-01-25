@@ -11,7 +11,7 @@ main {
 }
 
 header {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Work Sans', sans-serif;
   text-align: center;
   margin: 50px;
 }
@@ -24,16 +24,17 @@ h1 {
 }
 
 p {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin-top: 21px;
-  margin-bottom: 12px;
+  font-family: 'Work Sans', sans-serif;
+  margin-bottom: 20px;
   font-size: 20px;
   text-align: center;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
-
 section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
@@ -43,30 +44,24 @@ span {
   padding: 10px;
   height: 350px;
   width: 230px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .red {
   background-image: url(img/red.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-
   transition: 0.3s ease;
 }
 
 .green {
   background-image: url(img/green.png);
-  background-repeat: no-repeat;
-  background-size: cover;
   transition: 0.3s ease;
 }
 
 .close {
   background-image: url(img/close.png);
-  background-repeat: no-repeat;
-  background-size: cover;
   transition: 0.3s ease;
 }
-
 
 button {
   color: #fff;
@@ -77,14 +72,12 @@ button {
   height: 70px;
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 21px;
   border-radius: 10px;
   line-height: 1.5em;
   transition: 0.3s ease;
   box-shadow: 0 0.5rem 0.5rem rgba(36, 24, 24, 0.2);
   cursor: pointer;
 }
-
 
 .lose {
   background-color: #bb2d3b;
@@ -99,4 +92,32 @@ button {
 .disable {
   box-shadow: none;
   visibility: hidden
+}
+
+@media only screen and (max-width: 500px) {
+
+  header {
+    margin: 0px;
+  }
+
+  h1 {
+    margin: 10px auto;
+  }
+
+  section {
+    flex-direction: column;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  span {
+    height: 150px;
+    width: 100px;
+  }
+
+  button {
+    margin: 20px 0px 0px 0px;
+  }
 }
